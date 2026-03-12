@@ -7,12 +7,9 @@ on:
     branches: [ main ]
 
 jobs:
-
   build-test-push:
     runs-on: ubuntu-latest
-
     steps:
-
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -52,7 +49,6 @@ jobs:
     needs: build-test-push
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
-
     steps:
       - name: Deploy to Render
         run: |
